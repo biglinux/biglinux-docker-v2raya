@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=V2rayA
+Exec=/usr/bin/xdg-open http://localhost:2017
+Icon=/usr/share/icons/hicolor/scalable/apps/docker-v2raya.svg
+Categories=Docker; 

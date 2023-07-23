@@ -1,8 +1,8 @@
-# Maintainer: Barnabé di Kartola <barnabedikartola@gmail.com>
+# Maintainer: Tales A. Mendonça <talesam@gmail.com>
 
-pkgname=biglinux-package-template
-pkgdesc="Package template for biglinux"
-# depends=('')
+pkgname=biglinux-docker-v2raya
+pkgdesc="V2rayA é um cliente V2Ray potente e fácil de usar para Linux."
+depends=('biglinux-docker-config')
 # makedepends=('')
 # conflicts=('')
 pkgver=$(date +%y.%m.%d)

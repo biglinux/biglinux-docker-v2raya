@@ -1,0 +1,44 @@
+version: "3.9" # Version of Docker Compose
+
+# Define the services to be created
+services:
+    # Name of the service
+    v2raya:
+        # Docker image to be used for the container
+        image: mzz2017/v2raya
+        # Name of the Docker container
+        container_name: v2raya
+        privileged: true
+        environment:
+            - V2RAYA_ADDRESS=0.0.0.0:2017
+        # Define volumes to be mounted to the Docker container
+        volumes:
+            - ${HOME}/Docker/V2rayA/lib/modules:/lib/modules:ro
+            - ${HOME}/Docker/V2rayA/etc/resolv.conf:/etc/resolv.conf
+            - ${HOME}/Docker/V2rayA/etc/v2raya:/etc/v2raya
+        #- NET_ADMIN
+        deploy:
+            resources:
+                limits:
+                    # Limits the CPU usage by the container to 0.5 cores.
+                    cpus: '0.5'
+                    # Limits the memory usage by the container to 500MB.
+                    memory: 500M
+        healthcheck:
+            # Checks the health of the container using curl to access port 3000.
+            test: ["CMD", "curl", "-f", "http://127.0.0.1:2017"]
+            # The interval between each health check.
+            interval: 30s
+            # The maximum amount of time a health check can take before it is considered a failure.
+            timeout: 10s
+            # The number of consecutive health check failures required for the container to be considered unhealthy.
+            retries: 6
+        # The restart policy of the container. "always" means the container will be restarted regardless of the exit status.
+        restart: always
+        # The Docker network to which the container will be connected.
+        networks:
+            - v2raya-net
+
+networks:
+    v2raya-net:
+        driver: bridge
