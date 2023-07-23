@@ -16,7 +16,7 @@ services:
             - ${HOME}/Docker/V2rayA/lib/modules:/lib/modules:ro
             - ${HOME}/Docker/V2rayA/etc/resolv.conf:/etc/resolv.conf
             - ${HOME}/Docker/V2rayA/etc/v2raya:/etc/v2raya
-        #- NET_ADMIN
+        # NET_ADMIN
         deploy:
             resources:
                 limits:
