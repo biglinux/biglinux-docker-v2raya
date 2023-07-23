@@ -16,6 +16,8 @@ services:
             - /lib/modules:/lib/modules:ro
             - /etc/resolv.conf:/etc/resolv.conf
             - ${HOME}/Docker/V2rayA/etc/v2raya:/etc/v2raya
+        ports:
+            - "2017:2017"  # publish the service port
         # NET_ADMIN
         deploy:
             resources:
