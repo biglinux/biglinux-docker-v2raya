@@ -13,8 +13,8 @@ services:
             - V2RAYA_ADDRESS=0.0.0.0:2017
         # Define volumes to be mounted to the Docker container
         volumes:
-            - ${HOME}/Docker/V2rayA/lib/modules:/lib/modules:ro
-            - ${HOME}/Docker/V2rayA/etc/resolv.conf:/etc/resolv.conf
+            - /lib/modules:/lib/modules:ro
+            - /etc/resolv.conf:/etc/resolv.conf
             - ${HOME}/Docker/V2rayA/etc/v2raya:/etc/v2raya
         # NET_ADMIN
         deploy:
