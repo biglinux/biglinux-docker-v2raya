@@ -43,4 +43,4 @@ services:
 
 networks:
     v2raya-net:
-        driver: bridge
+        name: v2raya-net
